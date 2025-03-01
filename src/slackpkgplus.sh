@@ -978,10 +978,10 @@ if [ "$SLACKPKGPLUS" = "on" ];then
     if [ $(basename $1) = "GPG-KEY" ];then
       mkdir -p ${WORKDIR}/gpg
       rm -f ${WORKDIR}/gpg/* 2>/dev/null
-      gpg $2
-      if gpg $2|grep -q "$SLACKKEY" || [ "$STRICTGPG" == "off" ];then
+      $GPG $2
+      if $GPG $2|grep -q "$SLACKKEY" || [ "$STRICTGPG" == "off" ];then
         for PREPO in $(echo ${PRIORITY[*]}|sed 's/SLACKPKGPLUS_[^ ]*//g');do
-          gpg --output "${WORKDIR}/gpg/GPG-KEY-${PREPO}.gpg" --dearmor $2
+          $GPG --output "${WORKDIR}/gpg/GPG-KEY-${PREPO}.gpg" --dearmor $2
         done
       else
         echo
@@ -992,7 +992,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
         echo
         sleep 5
         echo "Fatal: Slackware repository does not contains the official gpg-key!!" >>$TMPDIR/error.log
-        gpg $2 >>$TMPDIR/error.log 2>&1
+        $GPG $2 >>$TMPDIR/error.log 2>&1
       fi
       for PREPO in ${REPOPLUS[*]};do
         if [ "${PREPO:0:4}" = "dir:" ];then
@@ -1015,9 +1015,9 @@ if [ "$SLACKPKGPLUS" = "on" ];then
           $DOWNLOADER $2-tmp-$PREPO ${MIRRORPLUS[${PREPO/SLACKPKGPLUS_}]}GPG-KEY
         fi
         if [ $? -eq 0 ];then
-          gpg $2-tmp-$PREPO
-          gpg --import $2-tmp-$PREPO
-          gpg --output "${WORKDIR}/gpg/GPG-KEY-${PREPO}.gpg" --dearmor $2-tmp-$PREPO
+          $GPG $2-tmp-$PREPO
+          $GPG --import $2-tmp-$PREPO
+          $GPG --output "${WORKDIR}/gpg/GPG-KEY-${PREPO}.gpg" --dearmor $2-tmp-$PREPO
         else
           echo
           echo "                   !!! W A R N I N G !!!"
@@ -1095,7 +1095,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
 
       if [ "$STRICTGPG" != "off" ] && ! echo ${MIRRORPLUS[$REPO]}|grep -q ^dir:/;then
         if [ ! -z "$REPO" ] && [ -e "${WORKDIR}/gpg/GPG-KEY-${REPO}.gpg" ] ; then
-          gpg  --no-default-keyring \
+          $GPG  --no-default-keyring \
                --keyring ${WORKDIR}/gpg/GPG-KEY-${REPO}.gpg \
                --verify ${1}.asc ${1} 2>/dev/null && echo "1" || echo "0"
         else
@@ -1106,7 +1106,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
           echo 0
         fi
       else
-        gpg --verify ${1}.asc ${1} 2>/dev/null && echo "1" || echo "0"
+        $GPG --verify ${1}.asc ${1} 2>/dev/null && echo "1" || echo "0"
       fi
     else # $1.asc not downloaded
       echo 1

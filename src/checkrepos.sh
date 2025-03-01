@@ -161,42 +161,42 @@ for R in $REPOS;do
   if [ $ERR -eq 0 ];then
     if [ ! -s GPG-KEY ];then
       [ $V ]&&echo "empty"|grep --color .
-      GPG=bad
+      GPGKEYFILE=bad
     elif ! grep -q -- "-----END" GPG-KEY;then
       [ $V ]&&echo "invalid"|grep --color .
-      GPG=bad
+      GPGKEYFILE=bad
     else
-      ID=$(gpg --list-packets GPG-KEY|grep ":user ID packet:"|head -1|cut -f2 -d'"')
+      ID=$($GPG --list-packets GPG-KEY|grep ":user ID packet:"|head -1|cut -f2 -d'"')
       if [ -z "$ID" ];then
         [ $V ]&&echo "Unable to get UID"|grep --color .
-        GPG=yes
+        GPGKEYFILE=yes
       else
         [ $V ]&&echo $ID
-        GPG=$ID
+        GPGKEYFILE=$ID
       fi
       if [ "$V" == "2" ];then
-        ( gpg --list-packets GPG-KEY
+        ( $GPG --list-packets GPG-KEY
           cat GPG-KEY
         )|sed 's/^/    /'
       fi
     fi
   elif grep -q "404 Not Found" wget.log;then
     [ $V ]&&echo "not present"|grep --color .
-    GPG=no
+    GPGKEYFILE=no
   else
     [ $V ]&&echo "unable to retrieve"|grep --color .
-    GPG=no
+    GPGKEYFILE=no
   fi
 
-  if [ "$GPG" = "bad" ];then
+  if [ "$GPGKEYFILE" = "bad" ];then
     [ $V ]&&echo -e "  invalid GPG key\nInvalid repository"|grep --color .||echo " Invalid (GPG-KEY failure)"|grep --color .
     continue
   fi
 
   if [ ! $V ];then
     echo -n " OK"
-    if [ "$GPG" != "yes" ];then
-      echo -n " ( $GPG gpg )"
+    if [ "$GPGKEYFILE" != "yes" ];then
+      echo -n " ( $GPGKEYFILE $GPG )"
     fi
     echo
   else
@@ -214,7 +214,7 @@ for R in $REPOS;do
 
 
 
-  echo -e "$REPO#$SIZE#$DATE#$GPG" >> repositories.tmp
+  echo -e "$REPO#$SIZE#$DATE#$GPGKEYFILE" >> repositories.tmp
 
 
 done
