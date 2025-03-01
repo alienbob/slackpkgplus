@@ -1093,6 +1093,22 @@ if [ "$SLACKPKGPLUS" = "on" ];then
         REPO=$(echo $1|sed -e "s,^/*$TEMP,/," -e "s,/\./,/,g" -e "s,//,/,g" -e "s,^/,," -e "s,/.*$,," -e "s,SLACKPKGPLUS_,,")
       fi
 
+      # If gpg1 (default) fails with --verify, disable repo GPG check.
+      if $GPG --list-packets ${1}.asc | grep -q "unknown algorithm" && [ "$GPG" == gpg1 ]; then
+        echo >&2
+        echo "                        !!! F A T A L !!!" >&2
+        echo "    Repository '$PREPO' packages are signed with a GPG key" >&2
+        echo "    which was created using an algorithm incompatible with '$GPG'." >&2
+        echo "    Ask the repository maintainer to create a compatible GPG key'." >&2
+        echo >&2
+        sleep 5
+        echo "Repository '$PREPO' signed with an incompatible GPG key." >> $TMPDIR/error.log
+        echo "Solve this by disabling the gpg check" >> $TMPDIR/error.log
+        echo >> $TMPDIR/error.log
+        echo 0
+        return
+      fi
+
       if [ "$STRICTGPG" != "off" ] && ! echo ${MIRRORPLUS[$REPO]}|grep -q ^dir:/;then
         if [ ! -z "$REPO" ] && [ -e "${WORKDIR}/gpg/GPG-KEY-${REPO}.gpg" ] ; then
           $GPG  --no-default-keyring \
