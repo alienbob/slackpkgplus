@@ -123,10 +123,10 @@ REPOPLUS=( slackpkgplus )
 #MIRRORPLUS['restricted']=https://slackware.nl/people/alien/restricted_sbrepos/15.0/x86/
 
 # use this to keep the slackpkg+ package updated to the latest stable release
-MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
+MIRRORPLUS['slackpkgplus']=https://slackware.nl/slackpkgplus/
 
 # use the development branch to use the mainline version and help develop by reporting bugs.
-#MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+dev/
+#MIRRORPLUS['slackpkgplus']=https://slackware.nl/slackpkgplusdev/
 
 # Local repository:
 #MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/15.0/x86/
@@ -142,7 +142,7 @@ MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
 # This does not replace sbopkg; slackpkg just report the package, version and url; you may
 # download it via 'slackpkg download <packagename>' and build it yourself or via sbopkg.
 #SBO['15.0']=https://www.slackbuilds.org/slackbuilds/15.0/
-#SBO['current']=https://cgit.ponce.cc/slackbuilds/
+#SBO['current']=https://github.com/Ponce/slackbuilds
 
 
 # Plugin section:

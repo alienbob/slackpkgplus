@@ -1,14 +1,14 @@
 Supported Repositories:
 
-> slackpkgplus:  https://slakfinder.org/slackpkg+{dev,1.7,1.8,15}/
+> slackpkgplus:  https://slackware.nl/slackpkgplus{dev,}/
 > multilib:      https://slackware.nl/people/alien/multilib/{15.0,current}/
 > alienbob:      https://slackware.nl/people/alien/sbrepos/{15.0,current}/{x86,x86_64}/
 > restricted:    https://slackware.nl/people/alien/restricted_sbrepos/{15.0,current}/{x86,x86_64}/
 > msb:           https://slackware.uk/msb/{15.0,current}/latest/{x86,x86_64}/
 > csb:           https://slackware.uk/csb/{15.0,current}/{x86,x86_64}/
-> slackers:      https://slack.conraid.net/repository/slackware64-current/
-> slackonly:     https://packages.slackonly.com/pub/packages/15.0-x86_64/
-> slackel:       http://www.slackel.gr/repo/{i486,x86_64}/current/
+> slackers:      https://slackers.it/repository/slackware64-current/
+> slackonly:     https://packages.slackonly.com/pub/packages/{15.0,current}-x86_64/
+> slackel:       http://www.slackel.gr/repo/{i486,x86_64}/{slackware-,}current/
 > slint:         https://slackware.uk/slint/x86_64/slint-15.0/
 > salixos:       https://download.salixos.org/{i486,x86_64}/15.0/
 > salixextra:    https://download.salixos.org/{i486,x86_64}/extra-15.0/
@@ -40,7 +40,7 @@ Some specific notes:
 * multilib:
     Please, run /usr/doc/slackpkg+-*/setupmultilib.sh to setup it.
     Periodically you should run "slackpkg install multilib"
-      after run "slackpkg upgrade-all"
+      after running "slackpkg upgrade-all"
 
 Please read /usr/doc/slackpkg+-*/README for more details
 
