@@ -978,8 +978,8 @@ if [ "$SLACKPKGPLUS" = "on" ];then
     if [ $(basename $1) = "GPG-KEY" ];then
       mkdir -p ${WORKDIR}/gpg
       rm -f ${WORKDIR}/gpg/* 2>/dev/null
-      $GPG $2
-      if $GPG $2|grep -q "$SLACKKEY" || [ "$STRICTGPG" == "off" ];then
+      $GPG --quiet $2
+      if $GPG --quiet $2|grep -q "$SLACKKEY" || [ "$STRICTGPG" == "off" ];then
         for PREPO in $(echo ${PRIORITY[*]}|sed 's/SLACKPKGPLUS_[^ ]*//g');do
           $GPG --output "${WORKDIR}/gpg/GPG-KEY-${PREPO}.gpg" --dearmor $2
         done
@@ -992,7 +992,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
         echo
         sleep 5
         echo "Fatal: Slackware repository does not contains the official gpg-key!!" >>$TMPDIR/error.log
-        $GPG $2 >>$TMPDIR/error.log 2>&1
+        $GPG --quiet $2 >>$TMPDIR/error.log 2>&1
       fi
       for PREPO in ${REPOPLUS[*]};do
         if [ "${PREPO:0:4}" = "dir:" ];then
@@ -1015,7 +1015,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
           $DOWNLOADER $2-tmp-$PREPO ${MIRRORPLUS[${PREPO/SLACKPKGPLUS_}]}GPG-KEY
         fi
         if [ $? -eq 0 ];then
-          $GPG $2-tmp-$PREPO
+          $GPG --quiet $2-tmp-$PREPO
           $GPG --import $2-tmp-$PREPO
           $GPG --output "${WORKDIR}/gpg/GPG-KEY-${PREPO}.gpg" --dearmor $2-tmp-$PREPO
         else
