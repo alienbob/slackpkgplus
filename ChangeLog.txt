@@ -1,3 +1,13 @@
+Sat Mar  1 20:39:40 UTC 2025
+pkg/slackpkg+-1.8.1-noarch-1alien.txz:  Upgraded.
+  - Alien BOB forked slackpkg+ to apply overdue updates.
+    All changes will be merged back into zerouno's original repository
+    when/if he returns to the stage.
+  - Use '$GPG' variable defined in slackpkg instead of hardcoding 'gpg'
+  - Update the 3rd-party repositories
+  - Warn when algorithm used to create GPG key is incompatible with gpg1
++-------------------------+
+
 Wed Sep  7 09:24:29 CEST 2022
 pkg/slackpkg+-1.8.0-noarch-7mt.txz: Rebuilt
   - egrep deprecated. thx to ma marav
