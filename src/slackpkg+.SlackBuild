@@ -7,7 +7,7 @@ VERSION=$(echo $TXZ|cut -f2 -d-)
 BUILD=$(echo $TXZ|cut -f4 -d-|sed 's/.txz//')$TAG
 echo "Building $TXZ"
 
-CWD=`pwd`
+CWD=$(pwd)
 TMP=${TMP:-/tmp}
 PKG=$TMP/slackpkg+-$VERSION
 
@@ -29,7 +29,7 @@ if [ ! -z "$INST" ];then
     echo "         remember to change \$VERSION or \$BUILD"
     sleep 5
   elif [ $NBUILD -le $NBINST ];then
-    echo "NOTICE:  `basename $INST` is installed"
+    echo "NOTICE:  'basename $INST' is installed"
     echo "         remember to change \$VERSION or \$BUILD"
     sleep 5
   fi
