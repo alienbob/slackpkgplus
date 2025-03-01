@@ -67,6 +67,17 @@ REPOS=$(eval echo $REPOS|sed -e 's/{//g' -e 's/}//g')
 [ $V ]&&echo "Expanded repositories" >&2
 [ $V ]&&echo $REPOS|sed 's/ /\n/g' >&2
 
+# Define which version of gnupg to use. We'll prefer gpg1 since it has fewer
+# dependencies, then gpg2, and if we don't find that we'll blindly set this
+# to gpg and deal with it later.
+if which gpg1 > /dev/null 2> /dev/null ; then
+  GPG=gpg1
+elif which gpg2 > /dev/null 2> /dev/null ; then
+  GPG=gpg2
+else
+  GPG=gpg
+fi
+
 TMP=$(mktemp -d)
 cd $TMP
 
