@@ -1327,6 +1327,16 @@ if [ "$SLACKPKGPLUS" = "on" ];then
             FULLNAME=""
           fi
         fi
+        # When "install-new" is used, there can be same named packages included
+        # in the list from other repositories, only slackware64 and patches should
+        # be used for "install-new" This happens if packages are Addded, then
+        # later Deleted in ChangeLog.txt.
+        if [[ $CMD == install-new ]]; then
+          if [[ ${PKGDATA[0]#*:} != slackware64 ]] && [[ ${PKGDATA[0]#*:} != patches ]]; then
+            NAME=""
+            FULLNAME=""
+          fi
+        fi
       fi
 
       if [ ! -z "$LINEIDX" ] ; then
