@@ -715,13 +715,13 @@ if [ "$SLACKPKGPLUS" = "on" ];then
         SBOURL=${SBO[$SBOKEY]}
         if [ "$SBOKEY" == "current" ];then
           SBOURL=${SBOURL%/}/
-          SBOtag=$(basename $(curl --max-time 10 --location -s $SBOURL|grep "/slackbuilds/tag/?h=" |head -1|grep -oE "href='[^']+'"|cut -f2 -d"'"|grep tar.gz))
+          SBOtag=$(basename $(curl --max-time 10 --location -s ${SBOURL}tags |grep tag/current- |head -1 |grep -oE '(href="[^"]+)'))
           SBOlast=$(cat $WORKDIR/sbolist_${SBOKEY}.tag 2>/dev/null)
-          if echo $SBOtag|grep -q slackbuilds-current-.*tar.gz && [ "$SBOtag" != "$SBOlast" ];then
-            $DOWNLOADER $TMPDIR/$SBOtag ${SBOURL}snapshot/$SBOtag
+          if [ -n "$SBOtag" ] && [ "$SBOtag" != "$SBOlast" ]; then
+            $DOWNLOADER $TMPDIR/${SBOtag}.tar.gz ${SBOURL}archive/refs/tags/${SBOtag}.tar.gz
             (
               cd $TMPDIR
-              tar xf $TMPDIR/*$SBOtag
+              tar xf $TMPDIR/*${SBOtag}.tar.gz
               cd slackbuilds-current*/
               find . -name \*.info|while read SBOinfo;do
                 source $SBOinfo
