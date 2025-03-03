@@ -87,6 +87,10 @@ SHOWORDER=package
 # Allow to show more details of the package in 'slackpkg info <package>'. Accepts "none", "basic", "filelist"
 DETAILED_INFO=basic
 
+# Define the GPG variable if not already defined by slackpkg: prefer gpg (1.x) on 15.0 like in the newer slackpkg,
+# on newer Slackware is already defined by /usr/libexec/slackpkg/core-functions.sh
+GPG=${GPG:-gpg}
+
 # Enable (on) / Disable (off) a Strict GPG Check. A repository should contains packages signed
 # with the only original GPG-KEY. In some custom repository may be wanted to mix heterogeneous
 # packages; to use that repository set Strict GPG Check to off. P.S: a repository can
