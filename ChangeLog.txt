@@ -1,3 +1,11 @@
+Tue Mar  4 12:26:33 UTC 2025
+pkg/slackpkg+-1.8.2-noarch-1alien.txz:  Upgraded.
+  - Apply fixes to the use of French language.
+  - Restrict install-new to slackware64 and patches.
+  - Define GPG in slackpkgplus.conf (needed by slackpkg+ in 15.0).
+  - Fix parsing of the SBo git repository data used for slackware-current.
++-------------------------+
+
 Sat Mar  1 20:39:40 UTC 2025
 pkg/slackpkg+-1.8.1-noarch-1alien.txz:  Upgraded.
   - Alien BOB forked slackpkg+ to apply overdue updates.
