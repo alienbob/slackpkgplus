@@ -8,7 +8,7 @@ Supported Repositories:
 > csb:           https://slackware.uk/csb/{15.0,current}/{x86,x86_64}/
 > slackers:      https://slackers.it/repository/slackware64-current/
 > slackonly:     https://packages.slackonly.com/pub/packages/{15.0,current}-x86_64/
-> slackel:       http://www.slackel.gr/repo/{i486,x86_64}/{slackware-,}current/
+> slackel:       https://slackware.uk/slackel/{i486,x86_64}/{slackware-,}current/
 > slint:         https://slackware.uk/slint/x86_64/slint-15.0/
 > salixos:       https://download.salixos.org/{i486,x86_64}/15.0/
 > salixextra:    https://download.salixos.org/{i486,x86_64}/extra-15.0/
