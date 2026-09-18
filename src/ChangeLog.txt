@@ -1,11 +1,16 @@
+Fri Sep 18 20:49:01 UTC 2026
+pkg/slackpkg+-1.8.3-noarch-1alien.txz:  Upgraded.
+  - Fix parsing bug which got exposed by slackpkg 16.0.0
+  - Add new (fast) repository URL for Slackel
+  - Also restrict install-new to slackware, next to slackware64 and patches
++--------------------------+
 Tue Mar  4 12:26:33 UTC 2025
 pkg/slackpkg+-1.8.2-noarch-1alien.txz:  Upgraded.
   - Apply fixes to the use of French language.
   - Restrict install-new to slackware64 and patches.
   - Define GPG in slackpkgplus.conf (needed by slackpkg+ in 15.0).
   - Fix parsing of the SBo git repository data used for slackware-current.
-+-------------------------+
-
++--------------------------+
 Sat Mar  1 20:39:40 UTC 2025
 pkg/slackpkg+-1.8.1-noarch-1alien.txz:  Upgraded.
   - Alien BOB forked slackpkg+ to apply overdue updates.
@@ -14,43 +19,36 @@ pkg/slackpkg+-1.8.1-noarch-1alien.txz:  Upgraded.
   - Use '$GPG' variable defined in slackpkg instead of hardcoding 'gpg'
   - Update the 3rd-party repositories
   - Warn when algorithm used to create GPG key is incompatible with gpg1
-+-------------------------+
-
++--------------------------+
 Wed Sep  7 09:24:29 CEST 2022
 pkg/slackpkg+-1.8.0-noarch-7mt.txz: Rebuilt
   - egrep deprecated. thx to ma marav
-+-------------------------+
-
++--------------------------+
 Sat May  7 01:31:38 CEST 2022
 pkg/slackpkg+-1.8.0-noarch-6mt.txz: Rebuilt
   - wget2 did print CWD
   - fixed typo in documentation
-+-------------------------+
-
++--------------------------+
 Sat May  7 01:06:13 CEST 2022
 pkg/slackpkg+-1.8.0-noarch-5mt.txz: Rebuilt
   - wget2 does not honor WGETOPTS
-+-------------------------+
-
++--------------------------+
 Mon Apr 18 18:19:11 CEST 2022
 pkg/slackpkg+-1.8.0-noarch-4mt.txz: Rebuilt
   - Show filename in wget2 instead directory
-+-------------------------+
-
++--------------------------+
 Sun Apr  3 19:29:38 CEST 2022
 pkg/slackpkg+-1.8.0-noarch-3mt.txz: Rebuilt
   - Manage '+' in $TEMP path
   - Remove obsolete or broken repositories from list
   - Add SBo 15.0
-+-------------------------+
-
++--------------------------+
 Wed Feb 16 15:50:11 CET 2022
 pkg/slackpkg+-1.8.0-noarch-2mt.txz: Rebuilt
   - slackpkg update will return exit code 2 on broken slackware mirrors
   - Advice if you are installing a wrong release of multilibs.
   - Make difference in switching from current >15.0 or from <15.0 to 15.0
-+-------------------------+
-
++--------------------------+
 Thu Feb  3 11:18:01 CET 2022
 pkg/slackpkg+-1.8.0-noarch-1mt.txz: Upgrade
   Hello, World! Slackware 15.0 was finally released so slackpkg+ has
@@ -65,8 +63,7 @@ pkg/slackpkg+-1.8.0-noarch-1mt.txz: Upgrade
   I thank everyone for contributing by reporting bugs or new proposal.
   Special thanks to those who maintain the repositories, that make
   slackpkg+ useful.
-+-------------------------+
-
++--------------------------+
 Sat Jan 29 16:42:01 CET 2022
 pkg/slackpkg+-1.8.rc3-noarch-1mt.txz: Upgrade
   - Give a chance to disable the packages cache purge.
@@ -76,16 +73,14 @@ pkg/slackpkg+-1.8.rc3-noarch-1mt.txz: Upgrade
   - Generated 1.8 branch on github and slakfinder repositories
   - New repository /slackpkg+1.8/ and a dynamic repository /slackpkg+/
     that automatically select a release for slackware 14.2 o 15.0
-+-------------------------+
-
++--------------------------+
 Sun Jan 16 00:05:32 CET 2022
 pkg/slackpkg+-1.8.rc2-noarch-1mt.txz: Upgrade
   - Fixed an advice at first 1.8 install
   - Fixed slackpkg info for sbo packages
   - Avoid slackpkg runs update before load slackpkg+ code
   - Fixed automatic rebuild pkglist
-+-------------------------+
-
++--------------------------+
 Fri Jan 14 20:49:06 CET 2022
 pkg/slackpkg+-1.8.rc1-noarch-2mt.txz: Rebuilt
   - Advice to run /var/lib/pkgtools/setup/setup.vi-ex if some upgrade
@@ -96,8 +91,7 @@ pkg/slackpkg+-1.8.rc1-noarch-2mt.txz: Rebuilt
     (from a non-release feature of slackpkg)
   - zlookkernel.sh does not try to configure grub, just re-configure if
     it is already configure
-+-------------------------+
-
++--------------------------+
 Thu Jan 13 10:48:24 CET 2022
 pkg/slackpkg+-1.8.rc1-noarch-1mt.txz: Upgrade
   Slackware 15.0 rc3 has been released, declared as 99% freezed. 
@@ -105,15 +99,13 @@ pkg/slackpkg+-1.8.rc1-noarch-1mt.txz: Upgrade
   time for slackpkg+ 1.8 to be declared ready. See the CHANGES in 
   documentation for all improvements.
   - Regression on (not-needed) gpg key check on dir:/ repository
-+-------------------------+
-
++--------------------------+
 Tue Jan 11 21:42:33 CET 2022
 pkg/slackpkg+-1.7.11-noarch-2mt.txz: Rebuilt
   - Automatically download gpg key if needed if STRICTGPG=on.
     If STRICTGPG=off you need to manually run slackpkg update gpg every
     time you add a new repository.
-+-------------------------+
-
++--------------------------+
 Tue Jan 11 19:24:04 CET 2022
 pkg/slackpkg+-1.7.11-noarch-1mt.txz: Upgrade
   - zlookkernel.sh also supports grub (thanks to RezaT4795)
@@ -125,14 +117,12 @@ pkg/slackpkg+-1.7.11-noarch-1mt.txz: Upgrade
        slackpkg install alienbob:libreoffice,
        slackpkg download libreoffice,
        slackpkg search libreoffice,
-+-------------------------+
-
++--------------------------+
 Sun Dec 19 23:40:59 CET 2021
 pkg/slackpkg+-1.7.10-noarch-1mt.txz: Upgrade
   - According to slackpkg 15.0.9, automatically rebuild package lists if
     missing or not build by slackpkg+
-+-------------------------+
-
++--------------------------+
 Tue Oct 26 10:10:23 CEST 2021
 pkg/slackpkg+-1.7.9-noarch-1mt.txz: Upgrade
   - According to slackpkg 15.0.8 new exit codes was added in slackpkg+ too:
@@ -144,24 +134,21 @@ pkg/slackpkg+-1.7.9-noarch-1mt.txz: Upgrade
       50 Slackpkg itself was upgraded and you need to re-run it.
       100 There are pending updates.
     Please: do not ignore the fatal output!
-+-------------------------+
-
++--------------------------+
 Sat Oct 16 15:39:45 CEST 2021
 pkg/slackpkg+-1.7.8-noarch-1mt.txz: Upgrade
   - New feature: CHECKDISKSPACE=on in configuration enable checking
     diskspace before download and install packages
   - Fixed an issue on zlookkernel when /boot/vmlinuz is a symlink to another
     symlink
-+-------------------------+
-
++--------------------------+
 Fri Jul  9 00:47:35 CEST 2021
 pkg/slackpkg+-1.7.7-noarch-1mt.txz: Upgrade
   - Added support for SBo-current repository (by cgit ponce)
   - slackpkg download <package> can download SBo scripts
   - Replaced SBOURL with array SBO to allow multiple repository. please
     do not change the default value.
-+-------------------------+
-
++--------------------------+
 Sun Jul  4 23:51:46 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-9mt.txz: Rebuilt
   - Just updated repositories in documentation and in sample config
@@ -169,73 +156,61 @@ pkg/slackpkg+-1.7.6-noarch-9mt.txz: Rebuilt
     moved to slackware.nl and www.slakfinder.org moved to slakfinder.org.
     If not explicitly put it in configuration files, the cached downloader
     may not work properly. So it's important update slackpkgplus.conf
-+-------------------------+
-
++--------------------------+
 Sun Jul  4 19:57:22 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-8mt.txz: Rebuilt
   - slackpkg update now force to download all metadata if conf file
     change (thanks to chrisretusn)
   - 'slackpkg download <full-package-name>' works
-+-------------------------+
-
++--------------------------+
 Fri Jun 11 16:25:43 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-7mt.txz: Rebuilt
   - Removed bash completion file (already included in slackpkg)
-+-------------------------+
-
++--------------------------+
 Fri Jun 11 15:36:58 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-6mt.txz: Rebuilt
   - slackpkg 15.0.5 incompatible gpg hardening.
-+-------------------------+
-
++--------------------------+
 Wed May 26 20:31:25 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-5mt.txz: Rebuilt
   - cached_downloader did not correctly honor VERBOSE >= 2
-+-------------------------+
-
++--------------------------+
 Fri May 14 21:01:28 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-4mt.txz: Rebuilt
   - bad package
-+-------------------------+
-
++--------------------------+
 Fri May 14 20:53:06 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-3mt.txz: Rebuilt
   - fix some regression with use of link
-+-------------------------+
-
++--------------------------+
 Thu May 13 22:37:45 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-2mt.txz: Rebuilt
   - link instead copy for local repositories (thanks to zdolar)
   - WGETOPTS="-q" works with links too (use it with USETERSE=on)
   - zlookkernel did not honor PLUGIN_ZLOOKKERNEL_PROMPT=off correctly
-+-------------------------+
-
++--------------------------+
 Wed May 12 00:02:47 CEST 2021
 pkg/slackpkg+-1.7.6-noarch-1mt.txz: Upgrade
   - Added LEGACYBL to allow slackpkg+ to use the previous blacklist system
   - Fix 'continue' error message with -dialog=off
   - Print "Package:" on the same line of progress counter in downloading
-+-------------------------+
-
++--------------------------+
 Mon May  3 10:05:41 CEST 2021
 pkg/slackpkg+-1.7.5-noarch-2mt.txz: Rebuilt
   - Not really need to rerun slackpkg update.
   - blacklist works as slackpkg
-+-------------------------+
-
++--------------------------+
 Mon Mar 29 21:19:36 CEST 2021
 pkg/slackpkg+-1.7.5-noarch-1mt.txz: Upgrade
   - Added TERSESEARCH to show a compact output in search function (thanks to
     edrozenberg)
-+-------------------------+
-
++--------------------------+
 Sat Mar 20 23:01:33 CET 2021
 pkg/slackpkg+-1.7.4-noarch-3mt.txz: Rebuilt
   - Fix exit code for check-updates (slackpkg 15.0.1); now it return 1 if
     there are updates available
   - Fix an incompatibility with dir:// repository and slackpkg 15.0.1
-+-------------------------+
-
++--------------------------+
 Mon Mar  8 21:45:32 CET 2021
 pkg/slackpkg+-1.7.4-noarch-2mt.txz: Rebuilt
   - doinst.sh does remove CHECKSUMS.md5 instead pkglist
@@ -247,8 +222,7 @@ pkg/slackpkg+-1.7.4-noarch-2mt.txz: Rebuilt
       Run it from cmdline directly
       Configure it to ask less confirmation
       Better documentation (open the zlookkernel.sh to read it)
-+-------------------------+
-
++--------------------------+
 Tue Mar  2 17:31:29 CET 2021
 pkg/slackpkg+-1.7.4-noarch-1mt.txz: Upgrade
   This release does not introduce feature on the core; just add a section to
@@ -258,8 +232,7 @@ pkg/slackpkg+-1.7.4-noarch-1mt.txz: Upgrade
   - ZLookKernel: help you to rebuild the initrd and install lilo or EFI elilo
   - ZChangeLog: generate a changelog for all repository at every 'update'
     process
-+-------------------------+
-
++--------------------------+
 Mon Mar  1 20:40:19 CET 2021
 pkg/slackpkg+-1.7.3-noarch-1mt.txz: Upgrade
   Starting from 1.7.1, slackpkg+ no longer supports Slackware 14.2 (i.e.
@@ -270,13 +243,11 @@ pkg/slackpkg+-1.7.3-noarch-1mt.txz: Upgrade
     "no updates" in stdout and "updates available" in stderr. If you are
     using automatic scripts be sure to fix it.
   - now both work properly with slackpkg+
-+-------------------------+
-
++--------------------------+
 Thu Feb 25 12:56:55 CET 2021
 pkg/slackpkg+-1.7.2-noarch-2mt.txz: Rebuilt
   - Solved bad progress bar in download/upgrade process
-+-------------------------+
-
++--------------------------+
 Wed Feb 24 22:07:25 CET 2021
 pkg/slackpkg+-1.7.2-noarch-1mt.txz: Upgrade
   It's the time to summarize all changes.
@@ -305,25 +276,21 @@ pkg/slackpkg+-1.7.2-noarch-1mt.txz: Upgrade
   - slackpkg+ currently does not support $ROOT
   - slackpkg-15 uses a new blacklist syntax; this works fine with slackpkg+
     but just for blacklist; don't use it for greylist
-+-------------------------+
-
++--------------------------+
 Mon Feb 15 21:14:31 CET 2021
 pkg/slackpkg+-1.7.1-noarch-1mt.txz: Upgrade
   - This is a temporary release
   - Slackpkg+ devel no longer supports slackware 14.2
-+-------------------------+
-
++--------------------------+
 Mon Feb  8 18:41:17 CET 2021
 pkg/slackpkg+-1.7.0d1-noarch-13mt.txz: Rebuilt
   - Fixed some regression on blacklist with slackpkg-15
-+-------------------------+
-
++--------------------------+
 Mon Jan 25 16:50:48 CET 2021
 pkg/slackpkg+-1.7.0d1-noarch-12mt.txz: Rebuilt
   - Other fix for counter on big package lists (thank chrisretusn for reporting)
   - Reverted zlookkernel. It need more testing.
-+-------------------------+
-
++--------------------------+
 Sun Jan 24 20:19:11 CET 2021
 pkg/slackpkg+-1.7.0d1-noarch-11mt.txz: Rebuilt
   - Fixed counter on big package lists (thank chrisretusn for reporting)
@@ -332,26 +299,22 @@ pkg/slackpkg+-1.7.0d1-noarch-11mt.txz: Rebuilt
   - zlookkernel: select huge or generic kernel according the running
     kernel instead the vmlinuz link
   - Removed ktown from default repositories
-+-------------------------+
-
++--------------------------+
 Sun Mar 15 21:36:19 CET 2020
 pkg/slackpkg+-1.7.0d1-noarch-10mt.txz: Rebuilt
   - Small fix in search packages
   - Added httpdir/httpsdir/ftpdir repository type. See documentation.
-+-------------------------+
-
++--------------------------+
 Sun Mar  8 17:28:40 CET 2020
 pkg/slackpkg+-1.7.0d1-noarch-9mt.txz: Rebuilt
   - Regression due percentage improvements
-+-------------------------+
-
++--------------------------+
 Sun Mar  8 13:58:45 CET 2020
 pkg/slackpkg+-1.7.0d1-noarch-8mt.txz: Rebuilt
   - Extends percentage where possible.
   - Align check-updates messages with slackpkg 2.84
   - Catch errors and return exit status: 1 for warning, 2 for fatal
-+-------------------------+
-
++--------------------------+
 Tue Feb 18 08:30:10 CET 2020
 pkg/slackpkg+-1.7.0d1-noarch-7mt.txz: Rebuilt
   - Replace SPINNING with PROGRESS status
@@ -362,8 +325,7 @@ pkg/slackpkg+-1.7.0d1-noarch-7mt.txz: Rebuilt
   - Fix search where there are duplicated packages (thanks phenixia2003)
   - Improved upgrade info on search (thanks phenixia2003)
   - Added Added /usr/libexec/slackpkg/zlookkernel.sh tool. Edit it to see instructions.
-+-------------------------+
-
++--------------------------+
 Thu Jan  3 12:18:57 CET 2019
 pkg/slackpkg+-1.7.0d1-noarch-6mt.txz: Rebuilt
   - Allow to use the blacklist system from slackpkg 2.84 (still in beta).
@@ -371,27 +333,23 @@ pkg/slackpkg+-1.7.0d1-noarch-6mt.txz: Rebuilt
     greylist.
   - Fixed searching groups (a, ap, ...) instead packages
   - Fix for servers using HTTP/2 on cached downloader
-+-------------------------+
-
++--------------------------+
 Fri Jun 15 18:25:33 CEST 2018
 pkg/slackpkg+-1.7.0d1-noarch-5mt.txz: Rebuilt
   - Fix incompatibility with slackpkg prior 2.83.0-noarch-3
-+-------------------------+
-
++--------------------------+
 Fri Jun 15 16:09:51 CEST 2018
 pkg/slackpkg+-1.7.0d1-noarch-4mt.txz: Rebuilt
   - Fix incompatibility with slackpkg-2.83.0-noarch-3
   - Fix setupmultilib script. It did use oldstyle 'multilib:'
   - Fix a regression in TAG PRIORITY
   - Handle the case where /var/log/packages is a symlink
-+-------------------------+
-
++--------------------------+
 Thu Apr 26 23:49:04 CEST 2018
 pkg/slackpkg+-1.7.0d1-noarch-3mt.txz: Rebuilt
   - Do not log 'install.log' and 'fatal.log' when DOWNLOADONLY=on
   - issue with slackpkg-2.83 (development release)
-+-------------------------+
-
++--------------------------+
 Sat Apr 14 00:09:27 CEST 2018
 pkg/slackpkg+-1.7.0d1-noarch-2mt.txz: Rebuilt
   - Add a fatal.log for messages that users should not ignore.
@@ -399,15 +357,13 @@ pkg/slackpkg+-1.7.0d1-noarch-2mt.txz: Rebuilt
   - slackpkg upgrade did not work with slackpkg-2.83 (development release)
   - Fixed checkrepos.sh when server response is 302
   - smaller output for slackpkg search
-+-------------------------+
-
++--------------------------+
 Sun Oct  2 13:55:26 CEST 2016
 pkg/slackpkg+-1.7.0d1-noarch-1mt.txz: Upgrade
   - Added SBo support. This does not replace sbopkg. It just search in
     SlackBuilds.org and report the url to download to build and install
     packages yourself.
-+-------------------------+
-
++--------------------------+
 Fri Jul  8 19:18:29 CEST 2016
 pkg/slackpkg+-1.7.0d0-noarch-4mt.txz: Rebuilt
   - Slackware 14.2 was finally released. Updated repository list.
@@ -416,27 +372,23 @@ pkg/slackpkg+-1.7.0d0-noarch-4mt.txz: Rebuilt
   - Improved checkrepos.sh (now write PACKAGES.TXT size and last update time)
   - Changed some default settings in sample configuration file; also
     USEBL accepts on/off instead 0/1
-+-------------------------+
-
++--------------------------+
 Wed Jun 22 21:05:15 CEST 2016
 pkg/slackpkg+-1.7.0d0-noarch-3mt.txz: Rebuilt
   - slackpkg search did not honor the '+' symbol (thanks to yars)
-+-------------------------+
-
++--------------------------+
 Wed Jun 22 00:01:56 CEST 2016
 pkg/slackpkg+-1.7.0d0-noarch-2mt.txz: Rebuilt
   - slackpkg check-updates did not work unless you set VERBOSE=3 (thanks to
     Talus).
-+-------------------------+
-
++--------------------------+
 Tue Jun 15 00:45:00 CEST 2016
 pkg/slackpkg+-1.7.0d0-noarch-1mt.txz: Upgraded
   Setting up mainline branch.
   - Fixed some typos and missed SEARCH_CLOG_INPARENT documentation in README
   - Suppress wget output in ChangeLog downloading
   - Fixed an issue when an invalid repository is configured
-+-------------------------+
-
++--------------------------+
 Version 1.7.0rc3 - 03/Jun/2016
   This could be the last batch of updates before 1.7.0 stable, so please test!
   - dialog did no more trap develop errors (but if occurs please report it)
