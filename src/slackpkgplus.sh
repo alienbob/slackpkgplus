@@ -190,7 +190,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
       DETAILED_INFO=${DETAILED_INFO:-none}
       [[ "$DETAILED_INFO" != "none" ]]&&more_info
     fi
-    rm -f ${TMPDIR}/waiting
+    [ "$SPINNING" = "off" ] || kill_spinning
     if [ "$CMD" == "update" ];then
       if [ -e $TMPDIR/pkglist.sbo ];then
         cat $TMPDIR/pkglist.sbo >> $WORKDIR/pkglist
@@ -1374,7 +1374,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
 
     touch ${TMPDIR}/waiting
     echo -n "Looking for $PATTERN in package list. Please wait... "|tr -d '\\*'
-    [ "$SPINNING" = "off" ] || spinning ${TMPDIR}/waiting &
+    [ "$SPINNING" = "off" ] || spinning & SPINNER_PID=$!
 
     [ "$SENSITIVE_SEARCH" = "off" ] && GREPOPTS="--ignore-case"
 
@@ -1491,7 +1491,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
       done < $PKGINFOS
       let PRIINPROGRESS++
     done
-    rm ${TMPDIR}/waiting
+    [ "$SPINNING" = "off" ] || kill_spinning
     rm -f $PKGLIST $PKGINFOS
 
     LIST=$( printf "%s\n" $LIST | applyblacklist | sort | uniq )
@@ -2631,7 +2631,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
     else
       if [[ ! ${SPINNING} = "off" ]]; then
         echo -n "Searching for updates... "
-        spinning ${TMPDIR}/waiting &
+        [ "$SPINNING" = "off" ] || spinning & SPINNER_PID=$!
       fi
       exec 3>&1 4>&2
       TTYREDIRECTION=1
@@ -2684,7 +2684,7 @@ if [ "$SLACKPKGPLUS" = "on" ];then
               
       [ -s "${TMPDIR}/updated-repos.txt" ] && UPDATES=true
     fi
-    rm -f ${TMPDIR}/waiting
+    [ "$SPINNING" = "off" ] || kill_spinning
     
     if $UPDATES ; then
       echo "Slackpkg: Updated packages are available since last check." >&2
