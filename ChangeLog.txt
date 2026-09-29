@@ -1,3 +1,7 @@
+Tue Sep 29 18:14:05 UTC 2026
+pkg/slackpkg+-1.8.4-noarch-1alien.txz:  Upgraded.
+  - Fix spinning bug introduced by slackpkg 16.0.1
++--------------------------+
 Fri Sep 18 20:49:01 UTC 2026
 pkg/slackpkg+-1.8.3-noarch-1alien.txz:  Upgraded.
   - Fix parsing bug which got exposed by slackpkg 16.0.0
